@@ -17,6 +17,21 @@ pacman::p_load(package1, pagckage2, …)
 }
 ```
 
+## store key-value pairs
+
+The simplest choice is to use the `environment` object, it is a hash map in essence.
+
+```r
+map <- new.env(hash = T, parent = emptyenv())
+
+map[[key]] <- val
+map$key    <- val
+
+print( map$key )
+```
+
+If you don't care about fast operations you can try lists (the same syntax).
+
 ## draw density line-plot with date x-axis
 
 ```r
