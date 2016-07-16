@@ -5,6 +5,18 @@ if (!require("pacman")) install.packages("pacman")
 pacman::p_load(package1, pagckage2, …)
 ```
 
+## redefine `+` operator for strings
+
+```r
+"+" = function(x, y) {
+    if(is.character(x) || is.character(y)) {
+        paste(x, y, sep = '')
+    } else {
+        .Primitive("+")(x, y)
+    }
+}
+```
+
 ## draw density line-plot with date x-axis
 
 ```r
